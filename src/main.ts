@@ -7,7 +7,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: 'https://layanan-pengaduan-fe.vercel.app/', // ganti dengan domain frontend kamu
+    origin: [
+      'https://layanan-pengaduan-fe.vercel.app',
+      'https://layanan-pengaduan-ii89oo4tg-hizkiaardiyantos-projects.vercel.app', // add preview origin
+    ],
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
